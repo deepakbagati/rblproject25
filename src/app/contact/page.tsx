@@ -21,7 +21,7 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // console.log(formData);
+    console.log(formData);
   };
 
   return (
@@ -92,7 +92,6 @@ const ContactForm: React.FC = () => {
             id="enquiryPurpose"
             name="enquiryPurpose"
             value={formData.enquiryPurpose}
-            onChange={handleChange}
             rows={4}
             className="w-full px-3 py-2 border bg-[#B6B6B6] opacity-[12%] rounded-md  text-white  focus:outline-none "
             required
