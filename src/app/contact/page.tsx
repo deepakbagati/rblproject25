@@ -1,62 +1,134 @@
-'use client';
+"use client";
+import { BackgroundBeams } from "@/components/ui/background-beams";
+import { useState } from "react";
+import Footer from "@/components/Footer";
 
-import React, { FormEvent, useState } from 'react';
-import { BackgroundBeams } from '@/components/ui/background-beams';
+const ContactForm: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    contactNumber: "",
+    enquiryPurpose: "",
+  });
 
-function MusicSchoolContactUs() {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log('Submitted:', { email, message });
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // console.log(formData);
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-12 pt-36 relative">
-      {' '}
-      {/* Ensure the container is relative */}
-      {/* BackgroundBeams with adjusted z-index */}
+    <div>
       <BackgroundBeams className="absolute top-0 left-0 w-full h-full z-0" />
-      {/* Content with higher z-index */}
-      <div className="max-w-2xl mx-auto p-4 relative z-10">
-        {' '}
-        {/* Add relative and z-10 to bring content to the front */}
-        <h1 className="text-lg md:text-7xl text-center font-sans font-bold mb-8 text-white">
-          Contact Us
+      <form
+        onSubmit={handleSubmit}
+        className="w-[70vh] h-[100vh] mx-auto  ml-[480px] mt-[170px]"
+      >
+        <h1
+          style={{ fontFamily: "Satoshi" }}
+          className="text-[#7FB2D4] text-7xl font-medium ml-[-6px]"
+        >
+          Get in touch
         </h1>
-        <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center">
-          We&apos;re here to help with any questions about our courses,
-          programs, or events. Reach out and let us know how we can assist you
-          in your musical journey.
+        <p
+          style={{ fontFamily: "Satoshi" }}
+          className=" font-medium text-[20px] text-[#ACACAC] mt-2"
+        >
+          Feel free to contact us for further assistance
         </p>
-        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+        <div className="mb-4 mt-6">
+          <label
+            htmlFor="name"
+            style={{ fontFamily: "Satoshi" }}
+            className="block text-[#FFFFFF] font-medium text-[16px] mb-2 "
+          >
+            Name
+          </label>
           <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Your email address"
-            className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full p-4 bg-neutral-950 placeholder:text-neutral-700"
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full px-3 py-2 border bg-[#B6B6B6] opacity-[12%] rounded-md  focus:outline-none text-white focus:border-blue-500"
             required
           />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="email"
+            style={{ fontFamily: "Satoshi" }}
+            className="block text-[#FFFFFF] font-medium mb-2"
+          >
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full px-3 py-2 border  bg-[#B6B6B6] opacity-[12%] rounded-md  text-white  focus:outline-none "
+            required
+          />
+        </div>
+      
+        <div className="mb-4">
+          <label
+            htmlFor="enquiryPurpose"
+            style={{ fontFamily: "Satoshi" }}
+            className="block text-[#FFFFFF] font-medium mb-2"
+          >
+            Purpose of Enquiry
+          </label>
           <textarea
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Your message"
-            className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full p-4 bg-neutral-950 placeholder:text-neutral-700"
-            rows={5}
+            id="enquiryPurpose"
+            name="enquiryPurpose"
+            value={formData.enquiryPurpose}
+            onChange={handleChange}
+            rows={4}
+            className="w-full px-3 py-2 border bg-[#B6B6B6] opacity-[12%] rounded-md  text-white  focus:outline-none "
             required
           ></textarea>
-          <button
-            type="submit"
-            className="px-6 py-2 rounded-lg bg-teal-500 text-white font-medium hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
-          >
-            Send Message
-          </button>
-        </form>
-      </div>
+        </div>
+        <div className="flex justify-between">
+          <div>
+            <p
+              style={{ fontFamily: "Satoshi" }}
+              className="text-[16px] font-medium text-[#BBBBBB]"
+            >
+              Get help:{" "}
+              <a
+                href="mailto:connect@vighnotech.com"
+                className="text-[#FFFFFF] font-medium text-[16px]"
+              >
+                info@vighnotech.com
+              </a>
+            </p>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              style={{ fontFamily: "Satoshi" }}
+              className="bg-[#6AADDA] text-[#FFFAFA] py-2 px-4 rounded-md  focus:outline-none focus:bg-blue-600"
+            >
+              {" "}
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+      <Footer />
     </div>
   );
-}
+};
 
-export default MusicSchoolContactUs;
+export default ContactForm;
