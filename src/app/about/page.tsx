@@ -46,7 +46,7 @@ const About = () => {
             forward. We believe everyone deserves access to guidance and
             support, regardless of background or circumstance. Just like light
             helps us see more clearly, Lumina provides the illumination you need
-            to navigate life's challenges and unlock your full potential.
+            to navigate life's challenges and unlock your full potential.
           </p>
         </div>
         {/* {/* <div className="flex justify-center mt-32 gap-28">
@@ -84,13 +84,13 @@ const About = () => {
             <span className="text-gray-300 text-sm">Associate Professor</span>
             <h3 className="text-6xl font-extrabold">Dr. Anil Vasoya</h3>
             <p className="mt-16 text-lg  ">
-              &quot; As an educator for more than 15 years, I've witnessed the
+              &quot; As an educator for more than 15 years, I have witnessed the
               transformative power of guidance and support. Lumina was born from
               a desire to make these resources more accessible to everyone.
               Witnessing the dedication and creativity of my students, including
               the brilliant minds behind this platform, has been incredibly
               rewarding. Together, we're building a future where AI empowers
-              individuals to reach their full potential. &quot;
+              individuals to reach their full potential. &quot;
             </p>
           </div>
         </div>
