@@ -38,7 +38,7 @@ const About = () => {
     <div className="bg-black text-white">
       <section className="max-w-screen-xl mx-auto p-3 ">
         <div className="ml-[70px]">
-          <h2 className="text-5xl bg-gradient-to-r from-blue-300 to-pink-700 bg-clip-text text-transparent  mt-40 font-semibold">
+          <h2 className="text-5xl  bg-gradient-to-r from-blue-400 to-pink-800 bg-clip-text text-transparent  mt-40 font-semibold">
             Why Lumina ?
           </h2>
           <p className="mt-4 text-2xl">

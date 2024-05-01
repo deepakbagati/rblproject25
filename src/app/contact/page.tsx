@@ -29,7 +29,7 @@ const ContactForm: React.FC = () => {
       <BackgroundBeams className="absolute top-0 left-0 w-full h-full z-0" />
       <form
         onSubmit={handleSubmit}
-        className="w-[70vh] h-[100vh] mx-auto  ml-[480px] mt-[170px]"
+        className="w-[70vh] h-[100vh] mx-auto  ml-[550px] mt-[170px]"
       >
         <h1
           style={{ fontFamily: "Satoshi" }}
