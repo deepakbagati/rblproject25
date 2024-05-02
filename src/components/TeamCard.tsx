@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {  FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { LuArrowRight } from 'react-icons/lu';
 import { BsTwitterX } from "react-icons/bs";
 
@@ -11,7 +11,7 @@ interface TeamMemberProps {
   imageUrl: string;
   instagramUrl: string;
   linkedinUrl: string;
-  Xurl:string
+  Xurl: string
 }
 
 const TeamMemberCard: React.FC<TeamMemberProps> = ({ name, role, imageUrl, Xurl, instagramUrl, linkedinUrl }) => {
