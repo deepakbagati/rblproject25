@@ -108,7 +108,7 @@ const ContactForm: React.FC = () => {
                 href="mailto:connect@vighnotech.com"
                 className="text-[#FFFFFF] font-medium text-[16px]"
               >
-                info@vighnotech.com
+                info@ai.com
               </a>
             </p>
           </div>

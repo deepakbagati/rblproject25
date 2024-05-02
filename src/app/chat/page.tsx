@@ -30,7 +30,7 @@ function Page() {
     <div>
       <div className="min-h-screen max-w-prose m-auto flex justify-center items-center bg-black">
         <div className=" w-full  p-6 bg-zinc-900 shadow-lg rounded-2xl">
-          <h1 className="text-3xl font-bold mb-6 text-center text-white">Chat</h1>
+          <h1 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-blue-400 to-pink-500 bg-clip-text text-transparent  ">How  can I help you today? </h1>
           {loading == false ? (
             <form onSubmit={handleSubmit} className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
               <input
